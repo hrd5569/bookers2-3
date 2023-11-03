@@ -17,6 +17,7 @@
           </td>
           <td><%= link_to @book.title, @book %></td>
           <td><%= @book.body %></td>
+          <%= render 'favorites/favorite', book: @book %>
           <!--特定の本を取得し、その本に関連付けられたユーザーオブジェクトを取得することで自分以外の投稿データは編集できなくする-->
           <% if @book.user === current_user %>
             <td><%= link_to 'Edit', edit_book_path(@book), class: "btn btn-sm btn-success" %></td>
